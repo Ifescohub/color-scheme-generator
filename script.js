@@ -3,6 +3,15 @@ let colorScheme = document.getElementById("scheme").value;
 const container = document.querySelector(".color-container");
 const copyNotice = document.querySelector(".copy-notice");
 
+
+
+//FORMATTING MODE SWITCH BETWEEN LIGHT AND DARK
+document.getElementById("mode-switch")
+    .addEventListener("click", ()=>{
+        document.body.classList.toggle("light-mode");
+    })
+
+//FUNCTION TO FETCH COLOR SCHEME FROM THE COLOR API
 function fetchColor(seed, scheme){
     fetch(`https://www.thecolorapi.com/scheme?hex=${seed}&format=json&mode=${scheme}&count=5`)
         .then(res => res.json())
@@ -18,13 +27,14 @@ function fetchColor(seed, scheme){
                     </div>
                     ` 
             }).join("");
-
         
             container.innerHTML = colorHtml;
         })
 }
 
+fetchColor(colorSeed, colorScheme);
 
+//Calling fetchColor function on form submit
 document.forms["form"].addEventListener("submit", (e)=>{
     e.preventDefault();
 
@@ -33,13 +43,12 @@ document.forms["form"].addEventListener("submit", (e)=>{
         .options[scheme.selectedIndex]
         .text.toLowerCase();
 
-
     fetchColor(colorSeed, colorScheme);
 });
 
-fetchColor(colorSeed, colorScheme);
 
 
+//FORMATTING COPY TO CLIPBOARD
 container.addEventListener("click", (e)=>{
     if (e.target.classList.contains("color-hex")){
         let hex = e.target;

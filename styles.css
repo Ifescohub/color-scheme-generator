@@ -7,10 +7,6 @@
     --clr-light-1: #FFFDFE;
     --clr-light-2: #D1D5DB;
     --clr-white: #ffffff;
-    
-    --clr-dark-4: #1F2937;
-    --clr-dark-5: #1F293A;
-    --clr-dark-6: #3D4B60;
 }
 
 *{
@@ -20,9 +16,27 @@
     font: inherit;
 }
 
-fieldset{
-    border: none;
+/* Mode Switch  */
+#mode-switch{
+    position: fixed;
+    right: 1%;
+    top: 5%;
+    background: var(--clr-light-1);
+    padding: 0.3rem;
+    border-radius: 5px;
 }
+
+#mode-switch img{
+    width: 1.5rem;
+    transform: rotate(4deg);
+    filter: invert(6%)
+            sepia(84%)
+            saturate(2984%)
+            hue-rotate(239deg)
+            brightness(94%)
+            contrast(117%);
+}
+
 
 body{
     font-family: 'Inter', sans-serif;
@@ -39,7 +53,7 @@ body{
 
 main{
     width: 30rem;
-    max-width: 95%;
+    max-width: 90%;
     margin: 0 auto;
     background-color: var(--clr-white);
     color: var(--clr-dark-1);
@@ -55,6 +69,10 @@ form{
     padding: 0.5rem;
 }
 
+fieldset{
+    border: none;
+}
+
 fieldset:nth-of-type(2){
     width: 55%;
 }
@@ -67,9 +85,11 @@ button{
     border: 1px solid var(--clr-light-2);
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
     border-radius: 6px;
+    color: currentColor;
     outline: none;
     cursor: pointer;
 }
+
 
 input{
     width: 3rem;
@@ -105,7 +125,7 @@ button{
 .color-svg{
     flex-basis: 100%;
     width: 100%;
-    height: 25rem;
+    height: 23rem;
 }
 
 .color-hex{
@@ -118,11 +138,13 @@ button{
     padding: 1rem;
     background-color: var(--clr-dark-1);
     color: var(--clr-light-2);
+    font-size: 0.8rem;
 }
 
 .copy-notice.active{
     color: var(--clr-light-1);
 }
+
 
 .scale{
     animation: scaleIn 1s ease-in-out;
@@ -139,4 +161,46 @@ button{
         transform: scale(1);
         transition: 0.5s ease-in-out;
     }
+}
+
+
+/* -----LIGHT MODE-------  */
+body.light-mode{
+    background: var(--clr-light-2);
+}
+
+body.light-mode #mode-switch{
+    background: var(--clr-dark-2);
+}
+
+body.light-mode #mode-switch img{
+    filter: invert(1);
+}
+
+body.light-mode main{
+    background-color: var(--clr-dark-3);
+    color: var(--clr-light-1);
+}
+
+body.light-mode select,
+body.light-mode button,
+body.light-mode option,
+body.light-mode button{
+    border: 1px solid var(--clr-dark-1);
+    box-shadow: 0px 1px 2px 1px rgba(255, 255, 255, 0.842);
+}
+
+body.light-mode .copy-notice{
+    padding: 1rem;
+    background-color: var(--clr-light-1);
+    color: var(--clr-dark-2);
+    font-size: 0.8rem;
+}
+
+body.light-mode option{
+    background-color: var(--clr-dark-3);
+}
+
+body.light-mode .copy-notice.active{
+    color: var(--clr-dark-1);
 }
