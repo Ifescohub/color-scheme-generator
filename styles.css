@@ -130,7 +130,7 @@ button{
 
 .color-hex{
     margin: 1rem auto;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     transition: 1s ease-in-out;
 }
 
@@ -179,7 +179,7 @@ body.light-mode #mode-switch img{
 
 body.light-mode main{
     background-color: var(--clr-dark-3);
-    color: var(--clr-light-1);
+    color: var(--clr-light-2);
 }
 
 body.light-mode select,
@@ -189,6 +189,11 @@ body.light-mode button{
     border: 1px solid var(--clr-dark-1);
     box-shadow: 0px 1px 2px 1px rgba(255, 255, 255, 0.842);
 }
+
+body.light-mode button{
+    background-color: var(--clr-dark-2);
+}
+
 
 body.light-mode .copy-notice{
     padding: 1rem;
@@ -203,4 +208,5 @@ body.light-mode option{
 
 body.light-mode .copy-notice.active{
     color: var(--clr-dark-1);
+    font-weight: 600;
 }
