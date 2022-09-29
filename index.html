@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coolor Scheme Generator</title>
+
+    <!-- CSS Style  -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- JavaScript  -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main>
+        <form name="form" action="">
+            <fieldset>
+                <label  for="seed-color"></label>
+                <input type="color" value="#8A1E1E" name="seed" id="seed">
+            </fieldset>
+            
+            <fieldset>
+                <label for="scheme"></label>
+                <select name="scheme" id="scheme">
+                    <option value="">Monochrome</option>
+                    <option value="">Monochrome-dark</option>
+                    <option value="">Monochrome-light</option>
+                    <option value="">Analogic</option>
+                    <option value="">Complement</option>
+                    <option value="">Analogic-complement</option>
+                    <option value="">Triad</option>
+                    <option value="">Quad</option>
+                </select>
+            </fieldset>
+           
+
+            <button>Get color scheme</button>
+        </form>
+
+        <div class="color-container"></div>
+
+    </main>
+</body>
+</html>
